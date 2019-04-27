@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+#header-section {
+    background: #ff1b68;
+    width:100%;
+    padding:20px;
+}
+
+#header-section h1 { /*this is a combinator*/
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+.plan-title {
+    color: chocolate;
+}
+
+body {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    margin: 0px;
+}
+
+h1 + p {
+    color: red;
+    background-color: #aaaaaa;
+}
+
+h1 + p + h2 {
+    color: red;
+    background-color: aliceblue;
+}
+
+h1 ~ p {
+    font-family: 'Anton', sans-serif;
+
+}
+
+div p {
+    color: red;
+    background: greenyellow;
+}
+
