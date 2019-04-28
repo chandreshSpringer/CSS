@@ -1,10 +1,11 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 #header-section {
     background: #ff1b68;
-    width:100%;
-    padding:20px;
+    width: 100%;
+    height: 700px;
 }
 
 #header-section h1 { /*this is a combinator*/
@@ -12,6 +13,7 @@
 }
 
 h1 {
+    margin: 0px;
     color: white;
 }
 
@@ -24,23 +26,74 @@ body {
     margin: 0px;
 }
 
-h1 + p {
+.main-header {
+    width: 100%;
+    background: lawngreen;
+}
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.main-header__brand {
+    color: #0e4f1f;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 130px);
+    vertical-align: middle;
+
+}
+
+.main-nav__item {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-nav__items {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.main-nav__items > a {
+    color: #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 4px;
+
+}
+
+.main-nav__items > a:hover ,
+.main-nav__items > a:active {
+    color: white;
+    border-bottom: 3px solid white;
+    border-bottom-color: white;
+}
+.main-nav__items--cta a{
+    background-color:  #ff1b68;
+    color: white;
+    padding:8px 16px;
+    border-radius: 8px;
+}
+
+.main-nav__items--cta > a:hover ,
+.main-nav__items--cta > a:active {
+    background-color: white;
+    color: #ff1b68;
+    border:none;
+}
+p::first-letter{
     color: red;
-    background-color: #aaaaaa;
+    font-size: 20px;
 }
-
-h1 + p + h2 {
-    color: red;
-    background-color: aliceblue;
-}
-
-h1 ~ p {
-    font-family: 'Anton', sans-serif;
-
-}
-
-div p {
-    color: red;
-    background: greenyellow;
-}
-
