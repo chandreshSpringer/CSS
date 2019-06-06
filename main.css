@@ -1,11 +1,4 @@
-* {
-    box-sizing: border-box;
-}
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0px;
-}
 
 #product-overview {
     background-image: url("freedom.jpg");
@@ -16,10 +9,8 @@ body {
 
 #product-overview h1 { /*this is a combinator*/
     font-family: 'Titillium Web', sans-serif;
-}
-
-h1 {
     color: white;
+
 }
 
 .plan-title {
@@ -51,17 +42,19 @@ h1 {
     font-size: 20px;
     padding: 0px 15px;
 }
-.plans-section__article-details{
+
+.plans-section__article-details {
     margin: 0px;
     padding: 0px;
 }
+
 .plans-section__article-details > li {
     padding: 2.5px 0px;
     list-style: none;
     font-size: 20px;
 }
-.plans-section__article button
-{
+
+.choose-plan-btn {
     font-size: 20px;
     font-weight: bold;
     background-color: #0e4f1f;
@@ -71,16 +64,18 @@ h1 {
     padding: 10px;
     color: white;
 }
+
 .article__recommended {
     background: #0d9a42;
     color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .article__recommended > h2 {
     color: black;
 }
 
-h1.article__recommended-h1{
+h1.article__recommended-h1 {
     background-color: white;
     color: #0d9a42;
     margin: 20px;
@@ -90,77 +85,35 @@ h1.article__recommended-h1{
     font-size: larger;
 }
 
-.main-header {
-    width: 100%;
-    background: #2ddf5c;
-}
-
-.main-header > div {
-    display: inline-block;
-    vertical-align: middle;
-
-}
-
-.main-header__brand {
-    color: #0e4f1f;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 20px;
-}
-
-.main-nav {
-    display: inline-block;
-    text-align: right;
-    width: calc(100% - 130px);
-    vertical-align: middle;
-
-}
-
-.main-nav__item {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.main-nav__items {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.main-nav__items > a {
-    color: #0e4f1f;
-    text-decoration: none;
-    font-weight: bold;
-    padding-bottom: 4px;
-
-}
-
-.main-nav__items > a:hover,
-.main-nav__items > a:active {
-    color: white;
-    border-bottom: 3px solid white;
-    border-bottom-color: white;
-}
-
-.main-nav__items--cta a {
+.key-features-div {
     background-color: #ff1b68;
     color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-}
-
-.main-nav__items--cta > a:hover,
-.main-nav__items--cta > a:active {
-    background-color: white;
-    color: #ff1b68;
-    border: none;
-}
-
-p::first-letter {
-    color: red;
+    text-align: center;
+    padding: 15px 10%;
     font-size: 20px;
 }
+
+.key-features {
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+}
+
+.key-feature {
+    vertical-align: middle;
+    display: inline-block;
+    width: 25%;
+    margin: 1.5%;
+}
+
+.key-feature-img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin: auto;
+    border: 3px solid black;
+    background: lightpink;
+}
+
+
 

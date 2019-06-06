@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            alert("enter pressed");
+            document.getElementById("button_search_xxxx").click();
+        }
+    });
+</script>
+<script>
+    var undef
+    var nl = null
+    var num = 5
+    var float = 6.789
+    var text = 'string'
+    abc = [4, 4, 5, 7]
+    var date2 = new Date('1995-12-17T03:24:00');
+    console.log("is null eqal to undef..(===[with strict type & value check]))             " + (nl === undef));
+    console.log("is null eqal to undef..(===[with strict type & value check]))             " + (nl === undef));
+    console.log('is null eqal to undef..(==[with only value check]))          ' + (nl == undef));
+    console.log('typeof nl   ' + typeof nl);
+    console.log('typeof undef   ' + typeof undef);
+    console.log('typeof num   ' + typeof num);
+    console.log('typeof float   ' + typeof float);
+    console.log('typeof text   ' + typeof text);
+    console.log('typeof NaN   ' + typeof NaN);
+    console.log('typeof date2   ' + typeof date2);
+    console.log('is NaN eqal to null..(===[with strict type & value check]))            ' + (NaN === null));
+    console.log('is NaN eqal to null..((==[with only value check]))            ' + (NaN == null));
+    console.log('is NaN eqal to undef..(===[with strict type & value check]))               ' + (NaN === undef));
+    console.log('is NaN eqal to undef..(==[with only value check])                 ' + (NaN == undef));
+
+    function calc(pqr) {
+        console.log("calc method was called");
+        return "456"
+    }
+
+    function calc(pqr, abc) {
+        console.log("new calc method was called");
+        console.log(pqr);
+        console.log(abc);
+        return "456"
+    }
+
+    calc()
+    var firstAssignedFun = calc
+    console.log("firstAssignedFun type calc            " + typeof firstAssignedFun)
+    firstAssignedFun()
+    var firstAssignedFun = calc(4, firstAssignedFun)
+    console.log("firstAssignedFun type  calc()           " + typeof firstAssignedFun)
+    //firstAssignedFun() throws error
+
+    var calc2 = function () {
+        console.log("calc2 method was called");
+    }
+    calc2()
+    console.log("typeof calc2         " + typeof calc2)
+    var assignedFn = calc2
+    assignedFn()
+    console.log("assignedFn type             " + typeof assignedFn)
+    var assignedFn = calc2()
+    //assignedFn() throws error
+
+    console.log("assignedFn type             " + typeof assignedFn)
+
+    // HOW NaN works
+    function sum(number1, number2) {
+        return number1 + number2
+    }
+
+    console.log(sum())//works //returns NaN because undefined+undefined=error hence NaN[any number operation if results in to error NaN is returned]
+    console.log(sum(10, 'chandresh'))//returns 18
+    console.log(sum(10, 8, 9, 20))//still returns 18 because function with same name are not allowed
+
+
+    function checkTruthly(condition) {
+        if (condition) {
+            let abc = '456'
+            console.log("condition[" + condition + "]  [" + typeof condition + "]  was truthly")
+        } else {
+
+            console.log("condition[" + condition + "]  [" + typeof condition + "] was falsy")
+
+        }
+    }
+
+    var condition = 1
+    checkTruthly(condition)
+    var condition = 0
+    checkTruthly(condition)
+    var condition = '1'
+    checkTruthly(condition)
+    var condition = '0'
+    checkTruthly(condition)
+    var condition = 'HI'
+    checkTruthly(condition)
+    var condition = 'false'
+    checkTruthly(condition)
+    var condition = false
+    checkTruthly(condition)
+    var condition = true
+    checkTruthly(condition)
+    var condition = 'false'
+    checkTruthly(condition)
+    var condition = 'true'
+    checkTruthly(condition)
+    var condition = undefined
+    checkTruthly(condition)
+    var condition = null
+    checkTruthly(condition)
+    var condition = []
+    checkTruthly(condition)
+    var condition = {}
+    checkTruthly(condition)
+
+    function switchCase(luckyNumber) {
+        console.log("luckyNumber is [" + luckyNumber + "]  [" + typeof luckyNumber + "]")
+        switch (luckyNumber) {
+            case 1:
+                console.log("is 1")
+                break;
+            case 2:
+                console.log("is 2")
+                break;
+            case 3:
+                console.log("is 3")
+                break;
+            case 4:
+                console.log("is 4")
+                break;
+
+            default :
+                console.log("is not any of above")
+
+        }
+    }
+
+    switchCase(1)
+    switchCase(2)
+    switchCase(3)
+    switchCase(4)
+    switchCase('1')
+    switchCase('3')
+    switchCase('2')
+    for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < 3; j++) {
+            console.log(" loop number " + i + "," + j)
+        }
+    }
+    console.log("12 + 3")
+    console.log(12 + 3)
+    console.log("12 + '3'")
+    console.log(12 + '3')
+    console.log("'join' + 3")
+    console.log('join' + 3)
+    console.log("12 + 'join'")
+    console.log(12 + 'join')
+    console.log("12 + true")
+    console.log(12 + true)
+    console.log("12 + false")
+    console.log(12 + false)
+    console.log("12 + null")
+    console.log(12 + null)
+    console.log("12 + undefined")
+    console.log(12 + undefined)
+
+    console.log("12 + NaN")
+    console.log(12 + NaN)
+    console.log("12 + [1, 2, 3]")
+    console.log(12 + [1, 2, 3])
+    console.log("12 + [1, 2, 'chandresh']")
+    console.log(12 + [1, 2, 'chandresh'])
+
+
+    console.log("12 - 3")
+    console.log(12 - 3)
+    console.log("12 - '3'")
+    console.log(12 - '3')
+    console.log("'join' - 3a")
+    console.log('join' - 3)
+    console.log("12 - 'join'")
+    console.log(12 - 'join')
+    console.log("12 - true")
+    console.log(12 - true)
+    console.log("12 - false")
+    console.log(12 - false)
+    console.log("12 - null")
+    console.log(12 - null)
+    console.log("12 - undefined")
+    console.log(12 - undefined)
+
+    console.log("12 - NaN")
+    console.log(12 - NaN)
+    console.log("12 - [1, 2, 3]")
+    console.log(12 - [1, 2, 3])
+    console.log("12 - [1, 2, 'chandresh']")
+    console.log(12 - [1, 2, 'chandresh'])
+
+
+    console.log("12 * 3")
+    console.log(12 * 3)
+    console.log("12 * '3'")
+    console.log(12 * '3')
+    console.log("'join' * 3")
+    console.log('join' * 3)
+    console.log("12 * 'join'")
+    console.log(12 * 'join')
+    console.log("12 * true")
+    console.log(12 * true)
+    console.log("12 * false")
+    console.log(12 * false)
+    console.log("12 * null")
+    console.log(12 * null)
+    console.log("12 * undefined")
+    console.log(12 * undefined)
+
+    console.log("12 * NaN")
+    console.log(12 * NaN)
+    console.log("12 * [1, 2, 3]")
+    console.log(12 * [1, 2, 3])
+    console.log("12 * [1, 2, 'chandresh']")
+    console.log(12 * [1, 2, 'chandresh'])
+
+
+    // /condition was truthly
+
+
+    console.log("12/0")
+    console.log(12 / 0)
+
+    console.log("12/3")
+    console.log(12 / 3)
+
+
+    console.log("3/12")
+    console.log(3 / 12)
+    console.log("3/Infinity")
+    console.log(3 / Infinity)
+
+
+    console.log("10/2.5")
+    console.log(10 / 2.5)
+
+
+    console.log("7.5/2.6")
+    console.log(7.5 / 2.6)
+
+    console.log("7.5/2.6 tofix")
+    console.log((7.5 / 2.6).toFixed(3))
+
+    //---------------------------------------
+
+    console.log("1==1")
+    console.log(1 == 1)
+
+
+    console.log("Nan==NAn")
+    console.log(NaN == NaN)
+
+    console.log("Nan===NAn")
+    console.log(NaN === NaN)
+
+
+    console.log("null==null")
+    console.log(null == null)
+
+    console.log("null===null")
+    console.log(null === null)
+
+
+    console.log("undefined==undefined")
+    console.log(undefined == undefined)
+
+    console.log("undefined===undefined")
+    console.log(undefined === undefined)
+
+    //null can not be compared  comparing anything with null will return false  --->except undefied(only for value)
+
+    console.log("Nan==NAn")
+    console.log(NaN == NaN)
+
+    console.log("isNaN(NaN)")
+    console.log(isNaN(NaN))
+
+    console.log("isNaN(100)")
+    console.log(isNaN(100))
+
+
+    console.log("1==1")
+    console.log(1 == 1)
+
+
+    console.log("1==1")
+    console.log(1 == 1)
+
+
+    console.log("1==1")
+    console.log(1 == 1)
+
+
+    console.log("1==1")
+    console.log(1 == 1)
+    //---------------------------------- binary operators && and || ! ==
+    //--------------------Ternary Operator
+    //precedence of operators...........
+
+
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+    console.log(5 * 4 + 3 / 2 - 1)
+
+
+    //-----primitive types
+
+    let a = 5
+    let b = a
+    b = 15
+
+    console.log("a")
+    console.log(a)
+    console.log("b")
+    console.log(b)
+    // Non primitive trypes[referance Types]
+    let arr1 = [4, 5, 6, 7, 8]
+    let arr2 = arr1
+    arr2.pop()
+
+
+    console.log("arr1")
+    console.log(arr1)
+
+    console.log("arr2")
+    console.log(arr2)
+    //scope--------------------local scope...Global scope
+
+    var testScope = 'global'
+    var localScope = function () {
+
+        var testScopelocal = 'local'
+        console.log(testScope)
+        console.log(testScopelocal)
+    }
+    console.log(testScope)
+    //console.log(testScopelocal) doesnt work
+    //Arrays declaration..........
+
+    var arr = [1, 2, 3, 4]
+    console.log('arr')
+    console.log(arr)
+    console.log('arr[5]')
+    console.log(arr[5])
+    arr[5] = 20
+    console.log('arr after insering 6th element while arr lenght is 4 only')
+    console.log(arr)
+    console.log('arr[5]')
+    console.log(arr[5])
+    //array loooping
+    arr.forEach(function (value) {
+        console.log(value)
+    })
+    arr1 = [4, 5, 6, 7, 8]
+    console.log("join")
+    console.log(arr1.join("#"))
+    console.log(arr1)
+    console.log(arr)
+
+    //array join
+    //array concat
+    //array reduce
+    var testObj = {}
+    var abc = 'abc'
+    console.log(arr1.reduce(function (first, second) {
+        console.log(first + "...........first")
+        console.log(second + "............second")
+
+        testObj[abc + first] = first
+        testObj[abc + second] = second
+        return testObj
+
+    }))
+
+    console.log(arr1 + "......arr1")
+    console.log(testObj + "......testObj")
+    console.log(testObj)
+    var Object = {
+        abcdef: 56,
+        pqr: 948129378198273918273,
+        xyz: "xyz",
+        f1: function () {
+            console.log(this.abcdef)
+        },
+        nested: {
+            n1: 23,
+            n2: 56
+        }
+    }
+    // for (let objectKey in Object) {
+    //     console.log(objectKey)
+    //     console.log(object.objectKey)
+    //     console.log(object[objectKey])
+    //
+    // }
+    //console.log(object.abcdef)
+    //console.log(object["pqr"])
+    //console.log(object.pqr)
+    //console.log(object["xyz"])
+    //console.log(object.f1())
+
+    //Objects
+    //Objects.prop
+    //objects[prop]
+
+    //objects nested in side objects
+    //objects can have functions
+    //this difference between properties and variabale
+
+
+    var person1={
+        fname:'chandresh',
+        lName:'Shukla',
+        fullnameF:function(){
+            return this.fname+' '+this.lName;
+        },
+        get fullName() {
+            return this.fname+' '+this.lName;
+        },
+        set salary(earnings){
+            this.earnings=earnings;
+        }
+    }
+    console.log('person1.fullName')
+    console.log(person1.fullName)
+    console.log('person1.fullnameF()')
+    console.log(person1.fullnameF())
+
+    person1.salary=5000
+    console.log(person1.earnings)
+
+    //getters and setters why??????
+
+    function f() {
+
+    }
+    var fObject=new f();
+    //Object cunstructors
+    function Employee(name, lastName, salary, designation) {
+        this.name = name
+        this.lastName = lastName
+        this.salary = salary
+        this.designation = designation
+    }
+
+
+    var newPerson = new Employee('chandresh', 'shukla', 100, 'TC')
+    console.log(newPerson.name)
+    console.log(newPerson.lastName)
+    console.log(newPerson.salary)
+    console.log(newPerson.designation)
+    //this doesnot work
+    Employee.manager = 'pramod'
+    var emp2 = new Employee('Monali', 'Patil', 1000, 'TC', 'Amol')
+    console.log(emp2.manager)
+    //shows that a constructor is basically an object and properties set
+    // on it will not be inharited/??
+    console.log('Employee.manager        ' + Employee.manager)
+
+    //HOw it should be
+    // function Employee(name, lastName, salary, designation, manager) {
+    //     this.name = name
+    //     this.lastName = lastName
+    //     this.salary = salary
+    //     this.designation = designation
+    //     this.manager = manager
+    // }
+    //
+    // var emp2 = new Employee('Monali', 'Patil', 1000, 'TC', 'Amol')
+    // console.log('emp2.manager          ' + emp2.manager)
+
+    //Constructor can have functions
+    function Employee(name, lastName, salary, designation, manager) {
+        this.name = name
+        this.lastName = lastName
+        this.salary = salary
+        this.designation = designation
+        this.manager = manager
+        this.getFullname = function () {
+            return this.name + ' ' + this.lastName
+
+        }
+    }
+
+    var emp2 = new Employee('Chaitali', 'Juare', 1000, 'TC', 'Shraddha')
+    console.log('emp2.getFullname          ' + emp2.getFullname())
+
+    //Primitive vs primitive wrappers
+
+    so1 = new String("John");
+    so2 = new String("John")
+    s1 = "John"
+    s2 = "John"
+    console.log("so1===so2    ")
+    console.log(so1 === so2)
+    console.log("so1==so2    ")
+    console.log(so1 == so2)
+    console.log("s1===so1    ")
+    console.log(s1 === so1)
+    console.log("s1==so1    ")
+    console.log(s1 == so1)
+
+    console.log("s1===s2    ")
+    console.log(s1 === s2)
+
+    //Using ProtoType
+    //here is some old code which does not work
+    function Emp(name, lastName, salary, designation) {
+        this.name = name
+        this.lastName = lastName
+        this.salary = salary
+        this.designation = designation
+
+    }
+
+    var newPerson = new Emp('chandresh', 'shukla', 100, 'TC')
+    console.log(newPerson.name)
+    console.log(newPerson.lastName)
+    console.log(newPerson.salary)
+    console.log(newPerson.designation)
+
+    //this doesnot work
+    Emp.manager = 'pramod'
+    var emp2 = new Emp('Monali', 'Patil', 1000, 'TC', 'Amol')
+    console.log('before prototype '+emp2.manager)
+
+    Emp.prototype.manager = 'Pramod'
+    Emp.prototype.setmanager = function (manager) {
+        this.manager = manager
+    }
+    Emp.prototype.getManager = function () {
+        return this.manager
+    }
+    console.log('After prototype addition '+emp2.manager)
+    emp2.setmanager('amol')
+    console.log('After set manager called '+emp2.getManager())
+
+    function f1() {
+        this.emp=new Emp();
+    }
+   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+
+</script>
+</body>
+</html>
