@@ -387,7 +387,7 @@
     console.log(arr1 + "......arr1")
     console.log(testObj + "......testObj")
     console.log(testObj)
-    var Object = {
+    var Object_temp = {
         abcdef: 56,
         pqr: 948129378198273918273,
         xyz: "xyz",
@@ -399,7 +399,7 @@
             n2: 56
         }
     }
-    // for (let objectKey in Object) {
+    // for (let objectKey in Object_temp) {
     //     console.log(objectKey)
     //     console.log(object.objectKey)
     //     console.log(object[objectKey])
@@ -420,17 +420,17 @@
     //this difference between properties and variabale
 
 
-    var person1={
-        fname:'chandresh',
-        lName:'Shukla',
-        fullnameF:function(){
-            return this.fname+' '+this.lName;
+    var person1 = {
+        fname: 'chandresh',
+        lName: 'Shukla',
+        fullnameF: function () {
+            return this.fname + ' ' + this.lName;
         },
         get fullName() {
-            return this.fname+' '+this.lName;
+            return this.fname + ' ' + this.lName;
         },
-        set salary(earnings){
-            this.earnings=earnings;
+        set salary(earnings) {
+            this.earnings = earnings;
         }
     }
     console.log('person1.fullName')
@@ -438,7 +438,7 @@
     console.log('person1.fullnameF()')
     console.log(person1.fullnameF())
 
-    person1.salary=5000
+    person1.salary = 5000
     console.log(person1.earnings)
 
     //getters and setters why??????
@@ -446,8 +446,10 @@
     function f() {
 
     }
-    var fObject=new f();
-    //Object cunstructors
+
+    var fObject = new f();
+
+    //Object_temp cunstructors
     function Employee(name, lastName, salary, designation) {
         this.name = name
         this.lastName = lastName
@@ -534,7 +536,7 @@
     //this doesnot work
     Emp.manager = 'pramod'
     var emp2 = new Emp('Monali', 'Patil', 1000, 'TC', 'Amol')
-    console.log('before prototype '+emp2.manager)
+    console.log('before prototype ' + emp2.manager)
 
     Emp.prototype.manager = 'Pramod'
     Emp.prototype.setmanager = function (manager) {
@@ -543,15 +545,69 @@
     Emp.prototype.getManager = function () {
         return this.manager
     }
-    console.log('After prototype addition '+emp2.manager)
+    console.log('After prototype addition ' + emp2.manager)
     emp2.setmanager('amol')
-    console.log('After set manager called '+emp2.getManager())
+    console.log('After set manager called ' + emp2.getManager())
 
     function f1() {
-        this.emp=new Emp();
+        this.emp = new Emp();
     }
-   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+
+    let user = {
+        name: "John",
+        surname: "Smith",
+
+        set fullName(value) {
+            [this.name, this.surname] = value.split(" ");
+        },
+
+        get fullName() {
+            return `${this.name} ${this.surname}`;
+        }
+    };
+
+    let admin = {
+        __proto__: user,
+        isAdmin: true
+    };
+
+    alert(admin.fullName); // John Smith (*)
+
+    // setter triggers!
+    admin.fullName = "Alice Cooper"; // (**)
+    let animal = function () {
+        this.eat = true
+        this.walk = function walk() {
+            if (this.isSleeping) {
+                return false
+            } else {
+                return true;
+            }
+        }
+    }
+    let rabbit = new animal();
+    animal.prototype.think="do'nt think"
+    //Object.setPrototypeOf(rabbit,Emp)
+    console.log(rabbit.__proto__)
+    console.log(rabbit.walk())
+    rabbit.isSleeping = true;
+    console.log(rabbit.walk())
+    rabbit.fevFood="carrot"
+
+    let indianRabbit={
+
+    }
+    console.log('animal')
+    console.log(animal)
+    Object.setPrototypeOf(indianRabbit,rabbit)
+    console.log('Indian rabbit')
+    console.log(indianRabbit.think)
+    console.log(indianRabbit.__proto__)
+    indianRabbit.__proto__.type='indian'
+
+    Object.create(indianRabbit.__proto__);
 </script>
 </body>
 </html>
